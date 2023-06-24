@@ -1,0 +1,34 @@
+#!/bin/bash
+# Permet de ban en masse les IPs passées en paramètres
+# Utilisation : ./ban_ips.sh 192.168.1.100 192.168.1.101 192.168.1.102
+
+## PSEUDO-CODE
+# récupérer les IP passées en paramètres
+# pour chaque paramètre / IP :
+#	- executer la commande fail2ban-client set [jail] banip [ip]
+
+## CODE
+# Vérifier si le script est exécuté en tant que root
+if [[ $EUID -ne 0 ]]; then
+    echo "Ce script doit être exécuté en tant que root."
+    exit 1
+fi
+
+# Vérifier si Fail2Ban est installé
+if ! command -v fail2ban-client &> /dev/null; then
+    echo "Fail2Ban n'est pas installé sur ce système."
+    exit 1
+fi
+
+# Vérifier si des adresses IP ont été fournies en tant que paramètres
+if [ $# -eq 0 ]; then
+    echo "Aucune adresse IP spécifiée en tant que paramètre."
+    echo "Utilisation : $0 IP1 [IP2] [IP3] ..."
+    exit 1
+fi
+
+# Bannir les adresses IP fournies en tant que paramètres
+for ip in "$@"; do
+    fail2ban-client set sshd banip $ip
+    echo "Adresse IP $ip bannie avec succès."
+done

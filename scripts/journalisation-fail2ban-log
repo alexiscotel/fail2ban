@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Prendre les logs d'authentification présents dans /var/log/auth.log
+# filtrer par date du jour
+# extraire dans un fichier
+# depuis ce fichier, clean les logs :
+# 	- garder l'heure, le type de connexion, l'état (réussi / échoué)
+# envoyer le contenu du fichier par mail
+
+
+Prendre les logs d'authentification présents dans /var/log/auth.log
+filtrer par date du jour
+extraire dans un fichier
+depuis ce fichier, clean les logs :
+	- garder l'heure, le type de connexion, l'état (réussi / échoué)
+envoyer le contenu du fichier par mail

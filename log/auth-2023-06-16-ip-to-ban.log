@@ -1,0 +1,32 @@
+2023-06-14 22:37:00,834 fail2ban.actions        [30352]: NOTICE  [sshd] Ban 139.227.251.82
+2023-06-15 11:03:01,992 fail2ban.actions        [200932]: NOTICE  [sshd] Ban 195.25.21.145
+2023-06-15 11:14:23,560 fail2ban.actions        [776]: NOTICE  [sshd] Restore Ban 195.25.21.145
+2023-06-15 11:17:28,827 fail2ban.actions        [776]: NOTICE  [sshd] Ban 36.110.228.254
+2023-06-15 11:29:31,964 fail2ban.actions        [776]: NOTICE  [sshd] Ban 14.48.241.157
+2023-06-15 11:51:51,252 fail2ban.actions        [776]: NOTICE  [sshd] Ban 31.184.198.71
+2023-06-15 12:11:51,478 fail2ban.actions        [776]: NOTICE  [sshd] Ban 8.213.27.228
+2023-06-15 18:14:20,162 fail2ban.actions        [776]: NOTICE  [sshd] Ban 185.224.128.121
+2023-06-15 18:32:43,174 fail2ban.actions        [776]: NOTICE  [sshd] Ban 121.146.4.161
+2023-06-15 19:36:52,342 fail2ban.actions        [776]: NOTICE  [sshd] Ban 113.219.213.168
+2023-06-15 20:06:34,954 fail2ban.actions        [776]: NOTICE  [sshd] Ban 51.83.43.46
+2023-06-15 20:37:39,984 fail2ban.actions        [776]: NOTICE  [sshd] Ban 111.67.194.160
+2023-06-15 20:53:40,239 fail2ban.actions        [124115]: NOTICE  [sshd] Restore Ban 111.67.194.160
+2023-06-15 20:53:40,251 fail2ban.actions        [124115]: NOTICE  [sshd] Restore Ban 113.219.213.168
+2023-06-15 20:53:40,257 fail2ban.actions        [124115]: NOTICE  [sshd] Restore Ban 121.146.4.161
+2023-06-15 20:53:40,264 fail2ban.actions        [124115]: NOTICE  [sshd] Restore Ban 14.48.241.157
+2023-06-15 20:53:40,271 fail2ban.actions        [124115]: NOTICE  [sshd] Restore Ban 185.224.128.121
+2023-06-15 20:53:40,277 fail2ban.actions        [124115]: NOTICE  [sshd] Restore Ban 195.25.21.145
+2023-06-15 20:53:40,284 fail2ban.actions        [124115]: NOTICE  [sshd] Restore Ban 31.184.198.71
+2023-06-15 20:53:40,291 fail2ban.actions        [124115]: NOTICE  [sshd] Restore Ban 36.110.228.254
+2023-06-15 20:53:40,297 fail2ban.actions        [124115]: NOTICE  [sshd] Restore Ban 51.83.43.46
+2023-06-15 20:53:40,304 fail2ban.actions        [124115]: NOTICE  [sshd] Restore Ban 8.213.27.228
+2023-06-15 22:35:21,384 fail2ban.actions        [124115]: NOTICE  [sshd] Ban 103.208.71.89
+2023-06-15 23:58:54,414 fail2ban.actions        [124115]: NOTICE  [sshd] Ban 150.158.182.174
+2023-06-16 00:03:00,706 fail2ban.actions        [124115]: NOTICE  [sshd] Ban 124.223.31.251
+2023-06-16 02:31:33,028 fail2ban.actions        [124115]: NOTICE  [sshd] Ban 8.222.143.54
+2023-06-16 03:54:59,458 fail2ban.actions        [124115]: NOTICE  [sshd] Ban 146.19.169.228
+2023-06-16 05:20:04,007 fail2ban.actions        [124115]: NOTICE  [sshd] Ban 211.196.120.196
+2023-06-16 06:39:01,670 fail2ban.actions        [124115]: NOTICE  [sshd] Ban 102.223.74.164
+2023-06-16 08:03:53,577 fail2ban.actions        [124115]: NOTICE  [sshd] Ban 159.89.172.190
+2023-06-16 09:44:46,814 fail2ban.actions        [124115]: NOTICE  [sshd] Ban 121.178.197.60
+2023-06-16 09:47:23,001 fail2ban.actions        [124115]: NOTICE  [sshd] Ban 124.221.148.89
