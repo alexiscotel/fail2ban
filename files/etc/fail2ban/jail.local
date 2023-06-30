@@ -1,0 +1,101 @@
+
+[DEFAULT]
+
+#
+# MISCELLANEOUS OPTIONS
+#
+
+bantime.increment = true
+bantime.rndtime = 10
+bantime.factor = 1
+bantime.formula = ban.Time * (1<<(ban.Count if ban.Count<20 else 20)) * banFactor
+bantime.multipliers = 1 2 4 8 16 32 64
+
+ignoreip = 127.0.0.1/8 ::1
+bantime  = 10m
+findtime  = 10m
+maxretry = 5
+maxmatches = %(maxretry)s
+
+usedns = warn
+logencoding = auto
+
+enabled = false
+mode = normal
+filter = %(__name__)s[mode=%(mode)s]
+
+# ACTIONS
+destemail = root@localhost
+sender = root@<fq-hostname>
+mta = sendmail
+
+#
+# JAILS
+#
+
+# Jail for more extended banning of persistent abusers
+# !!! WARNINGS !!!
+# 1. Make sure that your loglevel specified in fail2ban.conf/.local
+#    is not at DEBUG level -- which might then cause fail2ban to fall into
+#    an infinite loop constantly feeding itself with non-informative lines
+# 2. Increase dbpurgeage defined in fail2ban.conf to e.g. 648000 (7.5 days)
+#    to maintain entries for failed logins for sufficient amount of time
+[recidive]
+logpath  = /var/log/fail2ban.log
+banaction = %(banaction_allports)s
+bantime  = 1w
+findtime = 1d
+
+
+#
+# SSH servers
+#
+[sshd]
+#mode   = normal
+port    = ssh
+logpath = %(sshd_log)s
+backend = %(sshd_backend)s
+
+
+#
+# Mail servers
+#
+[sendmail-auth]
+port    = submission,465,smtp
+logpath = %(syslog_mail)s
+backend = %(syslog_backend)s
+
+[sendmail-reject]
+# To use more aggressive modes set filter parameter "mode" in jail.local:
+# normal (default), extra or aggressive
+# See "tests/files/logs/sendmail-reject" or "filter.d/sendmail-reject.conf" for usage example and details.
+#mode    = normal
+port     = smtp,465,submission
+logpath  = %(syslog_mail)s
+backend  = %(syslog_backend)s
+
+#
+# Miscellaneous
+#
+[php-url-fopen]
+# Ban attackers that try to use PHP's URL-fopen() functionality
+# through GET/POST variables. - Experimental, with more than a year
+# of usage in production environments.
+port    = http,https
+logpath = %(nginx_access_log)s
+          %(apache_access_log)s
+
+[gitlab]
+port    = http,https
+logpath = /var/log/gitlab/gitlab-rails/application.log
+
+[traefik-auth]
+# to use 'traefik-auth' filter you have to configure your Traefik instance,
+# see `filter.d/traefik-auth.conf` for details and service example.
+port    = http,https
+logpath = /var/log/traefik/access.log
+
+[phpmyadmin-syslog]
+port    = http,https
+logpath = %(syslog_authpriv)s
+backend = %(syslog_backend)s
